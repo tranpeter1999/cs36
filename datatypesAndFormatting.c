@@ -1,3 +1,11 @@
+/*
+This program explores data types and formatting
+Written by Peter Tran
+8/30/17
+C. Loke
+CS36
+*/
+
 #include<stdio.h>
 
 int main()
@@ -8,7 +16,7 @@ int main()
 
     //USE int OVER long WHENEVER POSSIBLE; USES LESS MEMORY AND ITS FASTER
 
-    float c = 42903.231; //1.2E-38 to 3.4E+38
+    float c = 42903.122 ; //1.2E-38 to 3.4E+38
     double d = 3890893089.4783; //2.3E-308 to 1.7E+308
 
     //USE double MOST COMMONLY; double = 15 decimal places, float = 6 decimal places
