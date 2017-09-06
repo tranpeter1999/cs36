@@ -31,4 +31,6 @@ int main()
     printf("The diameter of the circle is %lf.\n",roundToFiveDecimalPlaces(r*2));
     printf("The area of the circle is %lf.\n",roundToFiveDecimalPlaces(pi*r*r));
     printf("The circumference is %lf.\n",roundToFiveDecimalPlaces(2*pi*r));
+    
+    return 0;
 }
