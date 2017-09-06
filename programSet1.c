@@ -9,6 +9,7 @@ CS36
 
 #include<stdio.h>
 
+//calculations
 double roundToFiveDecimalPlaces(double f)
 {
     f = (int) ((f * 100000) + 0.5);
@@ -17,14 +18,15 @@ double roundToFiveDecimalPlaces(double f)
 
 int main()
 {
+    //declarations
     double r,pi;
-
+    //data
     r = 0;
-    pi = 3.14159; //  22/7
+    pi = 3.14159;
 
     printf("Enter a radius!\n");
     scanf("%lf",&r);
-
+    //output
     printf("The radius of the circle is %lf.\n",roundToFiveDecimalPlaces(r));
     printf("The diameter of the circle is %lf.\n",roundToFiveDecimalPlaces(r*2));
     printf("The area of the circle is %lf.\n",roundToFiveDecimalPlaces(pi*r*r));
