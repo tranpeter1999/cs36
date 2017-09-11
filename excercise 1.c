@@ -1,50 +1,62 @@
-/*
-Lab exercises
-1) Compute the volume & weight for shipping company
-
-input
-Enter weight _____             8
-Enter length _____            12
-Enter height _____            10
-
-output
-Volume (cubic inches)        960
-Dimensional weight (pounds)    6
-
-volume = w*l*h
-weight = (volume+165)/166
-*/
-
 #include<stdio.h>
 
 int main()
 {
-	int w,l,h,volume;
-	double weight;
+	//declaration
+	int IBMns,ORACLEns,SUNMICROns,LINKSYSns,CISCOns;
+	double IBMbp,IBMcp,IBMyf,ORACLEbp,ORACLEcp,ORACLEyf,SUNMICRObp,SUNMICROcp,SUNMICROyf,LINKSYSbp,LINKSYScp,LINKSYSyf,CISCObp,CISCOcp,CISCOyf;
 
-	printf("Enter weight: ");
-	scanf("%d",&w);
-	printf("Enter length: ");
-	scanf("%d",&l);
-	printf("Enter height: ");
-	scanf("%d",&h);
+	//input
+	printf("Enter the following for IBM\n");
+	printf("Number of shares:");
+	scanf("%d",&IBMns);
+	printf("Buying price per share:");
+	scanf("%lf",&IBMbp);
+	printf("Current price per share:");
+	scanf("%lf",&IBMcp);
+	printf("Yearly fees:");
+	scanf("%lf",&IBMyf);
 
-	volume = w*l*h;
-	weight = ((double) volume + 165)/166;
+	printf("Enter the following for ORACLE\n");
+	printf("Number of shares:");
+	scanf("%d",&ORACLEns);
+	printf("Buying price per share:");
+	scanf("%lf",&ORACLEbp);
+	printf("Current price per share:");
+	scanf("%lf",&ORACLEcp);
+	printf("Yearly fees:");
+	scanf("%lf",&ORACLEyf);
 
-	printf("Volume (in cubic inches): %d\n",volume);
-	printf("Weight (in pounds): %0.2lf\n",weight);
+	printf("Enter the following for SUN MICRO\n");
+	printf("Number of shares:");
+	scanf("%d",&SUNMICROns);
+	printf("Buying price per share:");
+	scanf("%lf",&SUNMICRObp);
+	printf("Current price per share:");
+	scanf("%lf",&SUNMICROcp);
+	printf("Yearly fees:");
+	scanf("%lf",&SUNMICROyf);
 
-	return 0;
+	printf("Enter the following for LINKSYS\n");
+	printf("Number of shares:");
+	scanf("%d",&LINKSYSns);
+	printf("Buying price per share:");
+	scanf("%lf",&LINKSYSbp);
+	printf("Current price per share:");
+	scanf("%lf",&LINKSYScp);
+	printf("Yearly fees:");
+	scanf("%lf",&LINKSYSyf);
+
+	printf("Enter the following for CISCO\n");
+	printf("Number of shares:");
+	scanf("%d",&CISCOns);
+	printf("Buying price per share:");
+	scanf("%lf",&CISCObp);
+	printf("Current price per share:");
+	scanf("%lf",&CISCOcp);
+	printf("Yearly fees:");
+	scanf("%lf",&CISCOyf);
+
+	//calculation and output
+	printf("--IBM--\nInitial Cost: $%lf\nCurrent Cost: $%lf\nProfit: $%lf\n",(double) IBMns*IBMbp,(double) IBMns*IBMcp,(double) IBMns*IBMcp - (double) IBMns*IBMbp - IBMyf);
 }
-
-/*
-Enter weight: 8
-Enter length: 12
-Enter height: 10
-Volume (in cubic inches): 960
-Weight (in pounds): 6.777108
-
-Process returned 0 (0x0)   execution time : 1.856 s
-Press any key to continue.
-*/
