@@ -33,7 +33,7 @@ int main()
 	weight = ((double) volume + 165)/166;
 
 	printf("Volume (in cubic inches): %d\n",volume);
-	printf("Weight (in pounds): %lf8\n",weight);
+	printf("Weight (in pounds): %0.2lf\n",weight);
 
 	return 0;
 }
