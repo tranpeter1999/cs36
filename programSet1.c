@@ -27,10 +27,10 @@ int main()
     printf("Enter a radius!\n");
     scanf("%lf",&r);
     //output
-    printf("The radius of the circle is %lf.\n",roundToFiveDecimalPlaces(r));
-    printf("The diameter of the circle is %lf.\n",roundToFiveDecimalPlaces(r*2));
-    printf("The area of the circle is %lf.\n",roundToFiveDecimalPlaces(pi*r*r));
-    printf("The circumference is %lf.\n",roundToFiveDecimalPlaces(2*pi*r));
+    printf("The radius of the circle is %.5lf.\n",roundToFiveDecimalPlaces(r));
+    printf("The diameter of the circle is %.5lf.\n",roundToFiveDecimalPlaces(r*2));
+    printf("The area of the circle is %.5lf.\n",roundToFiveDecimalPlaces(pi*r*r));
+    printf("The circumference is %.5lf.\n",roundToFiveDecimalPlaces(2*pi*r));
     
     return 0;
 }
