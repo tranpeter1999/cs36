@@ -58,5 +58,11 @@ int main()
 	scanf("%lf",&CISCOyf);
 
 	//calculation and output
-	printf("--IBM--\nInitial Cost: $%lf\nCurrent Cost: $%lf\nProfit: $%lf\n",(double) IBMns*IBMbp,(double) IBMns*IBMcp,(double) IBMns*IBMcp - (double) IBMns*IBMbp - IBMyf);
+	printf("--   IBM   --\nInitial Cost: $%lf\nCurrent Cost: $%lf\nProfit: $%lf\n",(double) IBMns*IBMbp,(double) IBMns*IBMcp,(double) IBMns*IBMcp - (double) IBMns*IBMbp - IBMyf);
+	printf("-- ORACLE  --\nInitial Cost: $%lf\nCurrent Cost: $%lf\nProfit: $%lf\n",(double) ORACLEns*ORACLEbp,(double) ORACLEns*ORACLEcp,(double) ORACLEns*ORACLEcp - (double) ORACLEns*ORACLEbp - ORACLEyf);
+	printf("--SUN MICRO--\nInitial Cost: $%lf\nCurrent Cost: $%lf\nProfit: $%lf\n",(double) SUNMICROns*SUNMICRObp,(double) SUNMICROns*SUNMICROcp,(double) SUNMICROns*SUNMICROcp - (double) SUNMICROns*SUNMICRObp - SUNMICROyf);
+	printf("-- LINKSYS --\nInitial Cost: $%lf\nCurrent Cost: $%lf\nProfit: $%lf\n",(double) LINKSYSns*LINKSYSbp,(double) LINKSYSns*LINKSYScp,(double) LINKSYSns*LINKSYScp - (double) LINKSYSns*LINKSYSbp - LINKSYSyf);
+	printf("--  CISCO  --\nInitial Cost: $%lf\nCurrent Cost: $%lf\nProfit: $%lf\n",(double) CISCOns*CISCObp,(double) CISCOns*CISCOcp,(double) CISCOns*CISCOcp - (double) CISCOns*CISCObp - CISCOyf);
+
+	return 0;
 }
