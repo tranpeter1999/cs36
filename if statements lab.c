@@ -26,13 +26,14 @@ int main()
 	printf("Enter a character: ");
 	scanf("%c",&c);
 
-	if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
-		print("Is a vowel!");
+	if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
+		printf("Is a vowel!");
 	else
-		print("Is not a vowel!");
-	
+		printf("Is not a vowel!");
+
 	return 0;
 }
+
 
 //LARGEST OF TWO
 
