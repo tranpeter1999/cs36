@@ -5,6 +5,12 @@ It accounts for both uppercase and lowercase
 This program uses switch statements instead of if else
 */
 
+//Peter Tran
+//1104985
+//Program : A calculator
+
+#include<stdio.h>
+
 int main()
 {
 	char grade;
