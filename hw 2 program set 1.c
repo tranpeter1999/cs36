@@ -6,6 +6,10 @@ If the sum is 2 or 12, the user loses
 If the sum is anything else, the user gets their money back
 */
 
+//Peter Tran
+//1104985
+//Program : A game
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
