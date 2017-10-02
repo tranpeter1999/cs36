@@ -1,36 +1,47 @@
 /*
-This program finds the area and circumference of a circle, allowing the user to pick the radius of the circle.
-It then displays the radius, diameter, area, and circumference up to 5 decimal places.
-Written by Peter Tran
-8/30/17
-C. Loke
-CS36
+This program lets you bet on 2 dice
+It rolls the dice and gets the sum
+If the sum is 7 or 11, the user wins
+If the sum is 2 or 12, the user loses
+If the sum is anything else, the user gets their money back
 */
 
 #include<stdio.h>
-
-//calculations
-double roundToFiveDecimalPlaces(double f)
-{
-    f = (int) ((f * 100000) + 0.5);
-    return f/100000;
-}
+#include<stdlib.h>
+#include<time.h>
 
 int main()
 {
-    //declarations
-    double r,pi;
-    //data
-    r = 0;
-    pi = 3.14159;
+	int a,b,sum;
+	time_t t;
 
-    printf("Enter a radius!\n");
-    scanf("%lf",&r);
-    //output
-    printf("The radius of the circle is %.5lf.\n",roundToFiveDecimalPlaces(r));
-    printf("The diameter of the circle is %.5lf.\n",roundToFiveDecimalPlaces(r*2));
-    printf("The area of the circle is %.5lf.\n",roundToFiveDecimalPlaces(pi*r*r));
-    printf("The circumference is %.5lf.\n",roundToFiveDecimalPlaces(2*pi*r));
-    
-    return 0;
+	srand((unsigned) time(&t));
+
+	a = rand() %6+1;
+    b = rand() %6+1;
+
+	sum = a + b;
+
+	printf("Your sum is %d\n",sum);
+
+	if(sum == 7 || sum == 11)
+        printf("You win!\n");
+    if(sum == 2 || sum == 12)
+        printf("You lose!\n");
+    if(sum != 2 && sum != 7 && sum != 11 && sum != 12 && sum > 0 && sum < 13)
+        printf("You get your money back!\n");
+    if(sum < 0 || sum > 13)
+        printf("Invalid\n");
+
+    /*
+	switch(sum)
+	{
+		case 7: case 11: printf("You win!\n"); break;
+		case 2: case 12: printf("You lose!\n"); break;
+		case 1: case 3: case 4: case 5: case 6: case 8: case 9: case 10: printf("You get your money back!\n"); break;
+		default: printf("Invalid\n");
+	}
+	*/
+
+	return 0;
 }
