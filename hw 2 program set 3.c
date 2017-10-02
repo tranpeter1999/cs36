@@ -7,7 +7,7 @@ This program uses switch statements instead of if else
 
 //Peter Tran
 //1104985
-//Program : A calculator
+//Program : Grade check (with switch statements)
 
 #include<stdio.h>
 
