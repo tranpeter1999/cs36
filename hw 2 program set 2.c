@@ -6,7 +6,7 @@ It accounts for both uppercase and lowercase
 
 //Peter Tran
 //1104985
-//Program : A calculator
+//Program : Grade check
 
 #include<stdio.h>
 
