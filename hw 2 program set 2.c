@@ -21,6 +21,8 @@ int main()
 		printf("\nThe score for the grade 'D' is 1.00");
 	else if(grade == 'F' || grade == 'f')
 		printf("\nThe score for the grade 'F' is 0.00");
+	else
+		printf("\nInvalid");
 	
 	return 0;
 }
