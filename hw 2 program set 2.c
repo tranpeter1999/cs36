@@ -32,3 +32,33 @@ int main()
 
 	return 0;
 }
+
+/* OUTPUTS
+Testing lowercase
+
+Enter a grade {A,B,C,D,F]:   a
+The score for the grade 'A' is 4.00
+Process returned 0 (0x0)   execution time : 1.971 s
+Press any key to continue.
+
+Testing uppercase
+
+Enter a grade {A,B,C,D,F]:   D
+The score for the grade 'D' is 1.00
+Process returned 0 (0x0)   execution time : 0.905 s
+Press any key to continue.
+
+Testing invalid #1
+
+Enter a grade {A,B,C,D,F]:   Y
+Invalid
+Process returned 0 (0x0)   execution time : 1.887 s
+Press any key to continue.
+
+Testing invalid #2
+
+Enter a grade {A,B,C,D,F]:   6
+Invalid
+Process returned 0 (0x0)   execution time : 2.012 s
+Press any key to continue.
+*/
