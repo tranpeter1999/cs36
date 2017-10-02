@@ -37,7 +37,7 @@ int main()
     mon=c+fq+fd+fn+fp;
 
     //Output
-    printf("%ini Coint Credit:\n",ini);
+    printf("%s Coint Credit:\n",ini);
     printf("Dollars:%0.0f\n",mon);
     printf("Change:%.2f cents\n",mon);
     return 0;
