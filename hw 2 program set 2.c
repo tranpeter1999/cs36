@@ -4,6 +4,12 @@ It then prints the corresponding score the numerical value.
 It accounts for both uppercase and lowercase
 */
 
+//Peter Tran
+//1104985
+//Program : A calculator
+
+#include<stdio.h>
+
 int main()
 {
 	char grade;
