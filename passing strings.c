@@ -46,9 +46,6 @@ Print		-name of stock
 
 #include<stdio.h>
 
-
-#include<stdio.h>
-
 void load(char *,int *,float *,float *);
 void calc(int, float, float, float *, float *, float *);
 void print(char *, float, float, float);
