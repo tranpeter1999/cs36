@@ -139,11 +139,12 @@ Find the largest number of a series of numbers the user inputs
 
 int main()
 {
-	int num;
-	int biggestNum = -999;
+	int num, biggestNum;
 
 	printf("Enter a value, -999 to quit");
 	scanf("%d",&num);
+	
+	biggestNum = num;
 
 	while(num!=-999)
 	{
