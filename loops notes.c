@@ -350,9 +350,10 @@ int main()
 {
 	char c;
 	int up = 0, lo = 0, nu = 0;
-
+	
 	do
 	{
+	    fflush(stdin);
 		printf("Enter a char, * to exit\n");
 		scanf("%c",&c);
 		if(c >= 97 && c <= 122)
@@ -362,11 +363,191 @@ int main()
 		if(c >= 48 && c <= 57)
 			nu++;
 	} while(c != '*');
-	
+
 	printf("%d uppercase, %d lowercase, %d numbers",up,lo,nu);
+
+	return 0;
+}
+
+/*
+FOR LOOP
+*/
+
+#include<stdio.h>
+
+int main()
+{
+	int i;
+	
+	for(i = 1; i <= 5; i++) //variable; condition; increment/decrement
+		printf("%d",i);
+	printf("%d",i);
 	
 	return 0;
 }
+
+/* OUTPUT
+123456
+*/
+
+#include<stdio.h>
+
+int main()
+{
+	for(int i = 1; i <= 5; i++) //variable; condition; increment/decrement
+		printf("%d",i);
+	printf("%d",i);
+	
+	return 0;
+}
+
+/*
+Given a range for C from -20 to 70 in increments of 5, use a for loop to display the F
+*/
+
+#include<stdio.h>
+
+int main()
+{
+	int c;
+
+	printf(" C   F \n");
+
+	for(c = -20; c <= 70; c+=5)
+		printf("%3d %3.2f\n",c,(float) c * 9/5 + 32);
+
+	return 0;
+}
+
+/*
+Find sum of numbers from 1 -> 100
+*/
+
+#include<stdio.h>
+
+int main()
+{
+	int i,sum = 0;
+	
+	for(i = 1; i <= 100; i++)
+		sum += i;
+	
+	printf("The sum is %d",sum);
+	
+	return 0;
+}
+
+/*
+Given a user inputted range for C, convert and display F
+*/
+
+#include<stdio.h>
+
+int main()
+{
+	int c,h,i;
+
+	printf("Enter the lowest C\n");
+	scanf("%d",&c);
+
+	printf("Enter the highest C\n");
+	scanf("%d",&h);
+
+	printf("Enter the increment\n");
+	scanf("%d",&i);
+
+	printf("  C   |   F\n");
+
+	for(c; c <= h; c+=i)
+		printf("%5d | %3.2f\n",c,(float) c * 9/5 + 32);
+
+	return 0;
+}
+
+/*
+The user enters 50 numbers, find sum and average
+*/
+
+#include<stdio.h>
+
+int main()
+{
+	int i,sum = 0;
+	
+	for(i = 1; i <= 50; i ++)
+	{
+		int n;
+		
+		printf("Enter a number\n");
+		scanf("%d",&n);
+		
+		sum += n;
+	}
+	
+	printf("The sum is %d\n",sum);
+	printf("The ave is %f\n",(float) sum / 50);
+}
+
+/*
+Find the largest of 50 numbers entered by the user
+*/
+
+#include<stdio.h>
+
+int main()
+{
+	int i,l = -2147483648;
+	
+	for(i = 1; i <= 50; i ++)
+	{
+		int n;
+		
+		printf("Enter a number\n");
+		scanf("%d",&n);
+		
+		if(n>l)
+			l = n;
+	}
+	
+	printf("The largest is %d\n",l);
+	
+	return 0;
+}
+
+/*
+Find the sum and ave of numbers inputted until the user enters -999 to quit
+*/
+
+#include<stdio.h>
+
+int main()
+{
+	int i,sum = 0,n = -1;
+
+	for(i; i != -999; n++)
+	{
+		printf("Enter a number, -999 to quit\n");
+		scanf("%d",&i);
+
+		if(i != -999)
+		{
+			sum += i;
+		}
+	}
+
+	if(n != 0)
+	{
+		printf("The sum is %d\n",sum);
+		printf("The ave is %f\n",(float) sum / n);
+	}
+	else
+		printf("You didn't enter any numbers");
+	
+	return 0;
+}
+
+
+
 
 
 
