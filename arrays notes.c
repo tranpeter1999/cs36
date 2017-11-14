@@ -233,18 +233,99 @@ int main()
 	printf("The original array elements\n");
 
 	for(i = 0; i < 10; i++)
+	{
         printf("a[%d] = %d\n",i,a[i]);
-	
-	for(i = 0; i < 10; i++)
 		sum += a[i];
+	}
 	
 	ave = (float) sum / 10;
 	
 	printf("The sum and ave are %d and %f\n",sum,ave);
 }
 
+/*
+DATA STRUCTURES
+1)arrays - collection of data of same type
+2)struct - structure, allocation of different types
 
+EXAMPLE
+A book has a title, author, price, copies, e.t.c (string, string, float, int)
+We want to store it all together, so we can't use an array
 
+  
+Pass arrays in functions
+-pass by reference (like strings, because strings are arrays)
+*/
 
+#include<stdio.h>
+#define size 5
+			// v same as *a
+void load(int a[], int n)
+{
+	int i;
+	for(i = 0; i < n; i++)
+	{
+		printf("Enter a number\n");
+		scanf("%d",&a[i]);
+	}
+}
 
+void print(int a[], int n)
+{
+	int i;
+	for(i = 0; i < n; i++)
+		printf("%d ",a[i]);
+	printf("\n\n\n");
+}
 
+void sort(int a[], int n)
+{
+	int i,j,t;
+	for(i = 0; i < n-1; i++)
+		for(j = 0; j < n-1; j++)
+			if(a[j] > a[j+1])
+			{
+				t = a[j];
+				a[j] = a[j+1];
+				a[j+1] = t;
+			}
+}
+
+void main()
+{
+	int a[size];
+	load(a,size);
+	print(a,size);
+	sort(a,size);
+	print(a,size);
+}
+
+/*
+2D ARRAYS
+uses 2 subscripts
+
+int a[4][3];
+  row ^  ^ column
+*/
+
+#include<stdio.h>
+
+void main()
+{
+	int b[2][3];
+	int row,col;
+
+	for(row = 0; row < 2; row++)
+		for(col = 0; col < 3; col++)
+		{
+			printf("Enter a number ");
+			scanf("%d",&b[row][col]);
+		}
+
+	for(row = 0; row < 2; row++)
+    {
+        for(col = 0; col < 3; col++)
+			printf("%d ",b[row][col]);
+		printf("\n");
+    }
+}
