@@ -329,3 +329,139 @@ void main()
 		printf("\n");
     }
 }
+
+
+/*
+LABS
+
+1) Write program to print largest and smallest number of array of at default 20 elements, with user size input (less than 20) and have user input array elements. After, print largest and position in array and smallest and position. Sort array in descending order and print
+
+2) Find second largest number in array of numbers
+
+3) Write program to find whether array of integers has duplicates. Duplicates or no? Print duplicates and position of duplicates
+*/
+
+#include<stdio.h>
+
+void sort(int a[], int n)
+{
+	int i,j,t;
+	for(i = 0; i < n-1; i++)
+		for(j = 0; j < n-1; j++)
+			if(a[j] < a[j+1])
+			{
+				t = a[j];
+				a[j] = a[j+1];
+				a[j+1] = t;
+			}
+}
+
+void main()
+{
+	int small, smallpos, large, largepos, size, i;
+
+	printf("Enter an array size (less than or equal to 20)\n");
+	scanf("%d",&size);
+
+	if(size>20)
+		size = 20;
+
+	int a[size];
+
+	for(i = 0; i < size; i++)
+	{
+		printf("Enter a number\n");
+		scanf("%d",&a[i]);
+
+		if(i==0)
+		{
+			small = a[i];
+			large = a[i];
+			smallpos = i;
+			largepos = i;
+		}
+		else
+		{
+			if(a[i] < small)
+			{
+				small = a[i];
+				smallpos = i;
+			}
+			if(a[i] > large)
+			{
+				large = a[i];
+				largepos = i;
+			}
+		}
+	}
+
+	printf("The largest number is %d at position %d\n",large,largepos);
+	printf("The smallest number is %d at position %d\n",small,smallpos);
+
+	sort(a,size);
+
+	for(i = 0; i < size; i++)
+		printf("%d ",a[i]);
+}
+
+//2
+
+#include<stdio.h>
+
+void sort(int a[], int n)
+{
+	int i,j,t;
+	for(i = 0; i < n-1; i++)
+		for(j = 0; j < n-1; j++)
+			if(a[j] < a[j+1])
+			{
+				t = a[j];
+				a[j] = a[j+1];
+				a[j+1] = t;
+			}
+}
+
+void main()
+{
+	int secondlarge, secondlargepos, large, largepos, size, i;
+
+	printf("Enter an array size (less than or equal to 20)\n");
+	scanf("%d",&size);
+
+	if(size>20)
+		size = 20;
+
+	int a[size];
+
+	for(i = 0; i < size; i++)
+	{
+		printf("Enter a number\n");
+		scanf("%d",&a[i]);
+
+		if(i==0)
+		{
+			secondlarge = a[i];
+			large = a[i];
+			secondlargepos = i;
+			largepos = i;
+		}
+		else
+		{
+			if(a[i] > large)
+			{
+				secondlarge = large;
+				secondlargepos = largepos;
+				large = a[i];
+				largepos = i;
+			}
+		}
+	}
+
+	printf("The largest number is %d at position %d\n",large,largepos);
+	printf("The second largest number is %d at position %d\n",secondlarge,secondlargepos);
+
+	sort(a,size);
+
+	for(i = 0; i < size; i++)
+		printf("%d ",a[i]);
+}
