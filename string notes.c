@@ -3,7 +3,7 @@ Strings
 
 String is a null terminated array
 
-char str[6] = "Hello";
+char str[6] = "Hello";  // |H|e|l|l|o|null|
 char str[10] = "Hello"; // |H|e|l|l|o|null|null|null|null|null|
 
 //INCORRECT
@@ -331,15 +331,19 @@ int main()
 	while(i < length)
 	{
 		int match = 1;
-		for(z = 0; z <= patLength-1; z++)
-		{
-			if(str[i+z] != pat[z])
-				match = 0;
-		}
 
-		if(match == 1)
+		if(patLength > 0)
         {
-            count++;
+            for(z = 0; z <= patLength-1; z++)
+            {
+                if(str[i+z] != pat[z])
+                    match = 0;
+            }
+
+            if(match == 1)
+            {
+                count++;
+            }
         }
 
 		i++;
@@ -349,3 +353,248 @@ int main()
 
 	return 0;
 }
+
+/*
+String Functions
+
+strcpy - String copy
+	strcpy(name1,name2); //copies name2 to name1
+	
+strncpy - String n copy
+	strncpy(name1, name2, 10); //copies first 10 characters from name2 to name1
+	
+strcat - join strings
+	strcat(s1,s2); //put strings together into one string
+	
+s1 = "Joe Blow"
+s2 = "is a pumpkin"
+
+strcat(s1,s2);
+
+-> "Joe Blowis a pumpkin"
+
+^^^ NO SPACE!
+
+To get a space
+
+s1 = "Joe Blow"
+s2 = "is a pumpkin"
+
+strcat(s1," ");
+strcat(s1,s2);
+
+strncat - join n char from string
+	strncat(s1,s2,5); //concatenate first 5 characters of s2 to end of s1
+	
+strcmp - compare strings
+	strcmp(name1,name2); //return 0, name1 == name2; return +, name1 > name2; return -, name1 < name2
+	
+"RUTH" < "SPOT" //cannot be used to compare strings, so use strcmp();
+"Spot" > "SPOT"
+
+strncmp - compare n chars from strings
+	strncmp(name1,name2,3); //compares only the first n chars
+
+strlen - calculate string length
+	strlen(str); //returns length of string
+	
+char name[30] = "Ruth";
+int l = strlen(name);
+
+//l = 4
+
+preprocessor directive
+#include<string.h>
+*/
+
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{
+	char names[5][10];
+	int r;
+
+	//load array
+	for(r = 0; r < 5; r++)
+	{
+		printf("Enter a name\n");
+		gets(names[r]);
+	}
+
+	//sort array
+	int j;
+	char t[10];
+	for(r = 0; r < 4; r++)
+	{
+		for(j = 0; j < 4; j++)
+		{
+			if(strcmp(names[j],names[j+1]) > 0)
+			{
+				strcpy(t,names[j]);
+				strcpy(names[j],names[j+1]);
+				strcpy(names[j+1],t);
+			}
+		}
+	}
+
+	printf("List of Names\n--------------------\n");
+
+	for(r = 0; r < 5; r++)
+		printf("%s\n",names[r]);
+	printf("\n\n");
+}
+
+//CONVERT ABOVE CODE TO FUNCTIONS
+
+#include<stdio.h>
+#include<string.h>
+
+void load(char array[][10]);
+void sort(char array[][10]);
+void print(char array[][10]);
+
+void main()
+{
+	char names[5][10];
+
+	//load array
+	load(names);
+
+	//sort array
+	sort(names);
+
+	printf("List of Names\n--------------------\n");
+
+	//print array
+	print(names);
+
+	printf("\n\n");
+}
+
+void load(char array[][10])
+{
+    int i;
+	for(i = 0; i < 5; i++)
+	{
+		printf("Enter a name\n");
+		gets(array[i]);
+	}
+}
+
+void sort(char array[][10])
+{
+    int i,j;
+	char t[10];
+	for(i = 0; i < 4; i++)
+	{
+		for(j = 0; j < 4; j++)
+		{
+			if(strcmp(array[j],array[j+1]) > 0)
+			{
+				strcpy(t,array[j]);
+				strcpy(array[j],array[j+1]);
+				strcpy(array[j+1],t);
+			}
+		}
+	}
+}
+
+void print(char array[][10])
+{
+    int i;
+	for(i = 0; i < 5; i++)
+		printf("%s\n",array[i]);
+}
+
+//NOW LET THE USER ENTER NUMBER OF STUDENTS AND ENTER THEIR NAMES
+
+#include<stdio.h>
+#include<string.h>
+
+void load(char array[][10],int);
+void sort(char array[][10],int);
+void print(char array[][10],int);
+
+void main()
+{
+	int n;
+
+	printf("Enter number of students\n");
+	scanf("%d",&n);
+
+	fflush(stdin);
+
+	char names[n][10];
+
+	//load array
+	load(names,n);
+
+	//sort array
+	sort(names,n);
+
+	printf("Student List\n--------------------\n");
+
+	//print array
+	print(names,n);
+
+	printf("\n\n");
+}
+
+void load(char array[][10],int n)
+{
+    int i;
+	for(i = 0; i < n; i++)
+	{
+		printf("Enter student name: ");
+		gets(array[i]);
+	}
+}
+
+void sort(char array[][10],int n)
+{
+    int i,j;
+	char t[10];
+	for(i = 0; i < n-1; i++)
+	{
+		for(j = 0; j < n-1; j++)
+		{
+			if(strcmp(array[j],array[j+1]) > 0)
+			{
+				strcpy(t,array[j]);
+				strcpy(array[j],array[j+1]);
+				strcpy(array[j+1],t);
+			}
+		}
+	}
+}
+
+void print(char array[][10],int n)
+{
+    int i;
+	for(i = 0; i < n; i++)
+		printf("%s\n",array[i]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
